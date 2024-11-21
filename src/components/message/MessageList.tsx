@@ -45,7 +45,7 @@ import wrap from "word-wrap";
 import {
   getMessageTime,
   getFirstMessagePerDate,
-} from "./../../utils/timestampUtils";
+} from "../../utils/timestampUtils";
 import { useDropzone } from "react-dropzone";
 import { MAX_FILE_SIZE } from "../../constants";
 

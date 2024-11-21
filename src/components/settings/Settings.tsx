@@ -35,7 +35,7 @@ import {
 import { ReduxParticipant } from "../../store/reducers/participantsReducer";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 
 interface SettingsProps {
   participants: ReduxParticipant[];

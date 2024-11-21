@@ -3,7 +3,7 @@ import { ModalFooter, ModalFooterActions } from "@twilio-paste/modal";
 import { Button } from "@twilio-paste/button";
 import { ArrowBackIcon } from "@twilio-paste/icons/esm/ArrowBackIcon";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 import { useSelector } from "react-redux";
 
 interface AddParticipantFooterProps {

@@ -19,7 +19,7 @@ import ConvoModal from "./ConvoModal";
 import { Content } from "../../types";
 import { ReduxParticipant } from "../../store/reducers/participantsReducer";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 import { useSelector } from "react-redux";
 
 interface ManageParticipantsModalProps {

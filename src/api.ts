@@ -316,3 +316,21 @@ export const getMessages = async (
   conversation: Conversation
 ): Promise<Paginator<Message>> =>
   await conversation.getMessages(CONVERSATION_PAGE_SIZE);
+
+export const closeConversation = async (
+  conversationSid: string
+): Promise<void> => {
+  const requestAddress = process.env.REACT_APP_CLOSE_CONVERSATION_URL as string;
+  if (!requestAddress) {
+    throw new Error(
+      "REACT_APP_CLOSE_CONVERSATION_URL is not configured, cannot close conversation"
+    );
+  }
+
+  try {
+    await axios.post(requestAddress, { ConversationSid: conversationSid });
+  } catch (error) {
+    console.error(`ERROR received from ${requestAddress}: ${error}\n`);
+    throw new Error(`ERROR received from ${requestAddress}: ${error}\n`);
+  }
+};

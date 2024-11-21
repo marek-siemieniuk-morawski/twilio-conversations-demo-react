@@ -120,8 +120,14 @@ export default {
     width: "100%",
     borderBottom: "1px solid #CACDD8",
   } as CSSProperties,
+  closeConvoButton: {
+    padding: "14px",
+    width: "100%",
+  } as CSSProperties,
   addParticipantsButton: {
-    padding: "14px 16px",
+    // Text wrap: nowrap
+    whiteSpace: "nowrap",
+    padding: "14px",
     width: "100%",
   } as CSSProperties,
   loginContainer: {

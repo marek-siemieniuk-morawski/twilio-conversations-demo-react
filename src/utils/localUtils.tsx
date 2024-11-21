@@ -66,6 +66,7 @@ export const translations: Translations = {
     chatParticipant: "Chat participant",
     leaveConvo: "Leave Conversation",
     addParticipants: "Add Participants",
+    closeConversation: "Close",
     addWhatsAppParticipant: "Add WhatsApp participant",
     addSMSParticipant: "Add SMS participant",
     addChatParticipant: "Add Chat participant",

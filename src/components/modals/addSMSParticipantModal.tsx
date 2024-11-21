@@ -5,7 +5,7 @@ import AddParticipantFooter from "./addParticipantFooter";
 import { ActionName } from "../../types";
 import ConvoModal from "./ConvoModal";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 import { useSelector } from "react-redux";
 
 interface AddSMSParticipantModalProps {

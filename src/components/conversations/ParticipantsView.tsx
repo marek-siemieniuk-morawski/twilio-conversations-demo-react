@@ -7,7 +7,7 @@ import { ReduxParticipant } from "../../store/reducers/participantsReducer";
 import styles from "../../styles";
 import AvatarGroup from "../AvatarGroup";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 import { useSelector } from "react-redux";
 
 const DEFAULT_MAX_DISPLAYED_PARTICIPANTS = 5;

@@ -6,7 +6,7 @@ import { Theme } from "@twilio-paste/core/theme";
 import { Box } from "@twilio-paste/core";
 
 import App from "./components/App";
-import styles from "../src/styles";
+import styles from "./styles";
 
 ReactDOM.render(
   <Box style={styles.app}>

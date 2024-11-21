@@ -4,6 +4,7 @@ import { EditIcon } from "@twilio-paste/icons/esm/EditIcon";
 
 import ParticipantsView from "./ParticipantsView";
 import Settings from "../settings/Settings";
+import CloseConversationButton from "./CloseConversationButton";
 import React, { useState, useEffect, useRef } from "react";
 import { ReduxConversation } from "../../store/reducers/convoReducer";
 import { ReduxParticipant } from "../../store/reducers/participantsReducer";
@@ -118,6 +119,8 @@ const ConversationDetails: React.FC<ConversationDetailsProps> = (
             flexDirection: "row",
           }}
         >
+          <CloseConversationButton convo={props.convo} />
+
           <ParticipantsView
             participants={props.participants}
             onParticipantListOpen={() => setIsManageParticipantOpen(true)}

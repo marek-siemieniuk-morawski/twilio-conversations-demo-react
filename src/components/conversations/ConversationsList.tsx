@@ -13,7 +13,7 @@ import { ReduxConversation } from "../../store/reducers/convoReducer";
 import { getSdkConversationObject } from "../../conversations-objects";
 import { ReduxMessage } from "../../store/reducers/messageListReducer";
 import { APP_TITLE } from "../../branding";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 
 function getLastMessage(
   messages: ReduxMessage[],

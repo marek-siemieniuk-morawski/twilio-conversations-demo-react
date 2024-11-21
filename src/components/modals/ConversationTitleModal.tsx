@@ -9,7 +9,7 @@ import ConvoModal from "./ConvoModal";
 
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 
 interface ConversationTitleModalProps {
   title: string;

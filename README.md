@@ -173,6 +173,10 @@ exports.handler = async function(context, event, callback) {
 6. **Copy URL** from the "kebab" three dot menu next to it and and use it as `REACT_APP_CREATE_CONVERSATION_SCOPED_WEBHOOK_URL` .env variable below.
 7. Click **Deploy All**.
 
+## Setting up Close Conversation
+
+Update the `REACT_APP_CLOSE_CONVERSATION_URL` in the `.env` file to point to a valid Twilio Function that will close the conversation.
+
 ## Setting up Push Notifications
 
 This demo app uses Firebase for processing notifications. This setup is optional. Note: Support may be limited for some browsers. 

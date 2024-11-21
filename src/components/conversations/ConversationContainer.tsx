@@ -17,7 +17,7 @@ import { getSdkConversationObject } from "../../conversations-objects";
 import { successNotification } from "../../helpers";
 import { CONVERSATION_MESSAGES, ERROR_MODAL_MESSAGES } from "../../constants";
 import ActionErrorModal from "../modals/ActionErrorModal";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 
 interface ConvoContainerProps {
   conversation?: ReduxConversation;

@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import MessageFile from "./MessageFile";
 import { useSelector } from "react-redux";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 
 interface MessageInputProps {
   message: string;

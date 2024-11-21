@@ -8,7 +8,7 @@ import { PlusIcon } from "@twilio-paste/icons/esm/PlusIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators, AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 
 interface NewConvoProps {
   client?: Client;

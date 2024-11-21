@@ -1,6 +1,6 @@
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
-import { ReduxMessage } from "./../store/reducers/messageListReducer";
+import { ReduxMessage } from "../store/reducers/messageListReducer";
 import * as _ from "lodash";
 
 const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;

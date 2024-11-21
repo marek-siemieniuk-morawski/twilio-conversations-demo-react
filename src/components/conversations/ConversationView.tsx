@@ -16,7 +16,7 @@ import { NOTIFICATION_LEVEL } from "../../constants";
 import { SetSidType, SetUnreadMessagesType } from "../../types";
 import { getMessageStatus } from "../../api";
 
-import { getLastMessageTime } from "./../../utils/timestampUtils";
+import { getLastMessageTime } from "../../utils/timestampUtils";
 
 import { ReduxConversation } from "../../store/reducers/convoReducer";
 import { ReduxParticipant } from "../../store/reducers/participantsReducer";

@@ -9,9 +9,9 @@ import ConversationsList from "./ConversationsList";
 import styles from "../../styles";
 
 import { useDispatch, useSelector } from "react-redux";
-import { filterConversations } from "./../../store/action-creators";
+import { filterConversations } from "../../store/action-creators";
 import { AppState } from "../../store";
-import { getTranslation } from "./../../utils/localUtils";
+import { getTranslation } from "../../utils/localUtils";
 
 interface ConvosContainerProps {
   client?: Client;

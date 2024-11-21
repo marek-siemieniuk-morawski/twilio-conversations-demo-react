@@ -10,7 +10,7 @@ import { readUserProfile } from "../api";
 import { AppLogo, LOGO_SUB_TITLE, LOGO_TITLE } from "../branding";
 import { useSelector } from "react-redux";
 import { AppState } from "../store";
-import { getTranslation } from "./../utils/localUtils";
+import { getTranslation } from "../utils/localUtils";
 
 type AppHeaderProps = {
   user: string;
