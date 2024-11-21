@@ -49,8 +49,8 @@ export async function addConversation(
     await conversation.join();
 
     const participants = await conversation.getParticipants();
+    await createConversationScopedWebhook(conversation.sid);
     updateParticipants(participants, conversation.sid);
-
     successNotification({
       message: CONVERSATION_MESSAGES.CREATED,
       addNotifications,
@@ -176,6 +176,26 @@ export async function getToken(
       throw new Error(error.response.data ?? "Authentication error.");
     }
 
+    console.error(`ERROR received from ${requestAddress}: ${error}\n`);
+    throw new Error(`ERROR received from ${requestAddress}: ${error}\n`);
+  }
+}
+
+export async function createConversationScopedWebhook(
+  conversationSid: string
+): Promise<void> {
+  const requestAddress = process.env
+    .REACT_APP_CREATE_CONVERSATION_SCOPED_WEBHOOK_URL as string;
+  if (!requestAddress) {
+    console.warn(
+      "REACT_APP_CREATE_CONVERSATION_SCOPED_WEBHOOK_URL is not configured, skipping webhook creation"
+    );
+    return;
+  }
+
+  try {
+    await axios.post(requestAddress, { ConversationSid: conversationSid });
+  } catch (error) {
     console.error(`ERROR received from ${requestAddress}: ${error}\n`);
     throw new Error(`ERROR received from ${requestAddress}: ${error}\n`);
   }

@@ -32,6 +32,7 @@ What you'll need to get started:
 
 - A [fork](https://github.com/twilio/twilio-conversations-demo-react/fork) of this repo to work with.
 - A way to [generate Conversations access tokens](#generating-access-tokens).
+- A way to [link incoming messages to Studio](#link-incoming-messages-to-studio).
 - Optional: A Firebase project to [set up push notifications](#setting-up-push-notifications).
 
 ## Generating Access Tokens
@@ -129,6 +130,48 @@ This demo app expects your access token server to provide a valid token for vali
 $REACT_APP_ACCESS_TOKEN_SERVICE_URL?identity=<USER_PROVIDED_USERNAME>&password=<USER_PROVIDED_PASSWORD>
  ```
 And return HTTP 401 in case of invalid credentials.
+
+## Link Incoming Messages to Studio
+
+1. Create a [Twilio Functions Service from the console](https://www.twilio.com/console/functions/overview) and add a new function using the **Add+** button.
+2. Set the function path name to `/create-conversation-scoped-webhook`
+3. Set the function visibility to `Public`. 
+4. Insert the following code:
+```javascript
+exports.handler = async function(context, event, callback) {
+  const conversationSid = event.ConversationSid;
+  const twilioClient = context.getTwilioClient();
+
+  let response = new Twilio.Response();
+  let headers = {
+    'Access-Control-Allow-Origin': '*',
+  };
+  response.setHeaders(headers);
+
+ try {    
+    // Creates a webhook for the conversation targeted at our Studio Flow SID 
+    const webhook = await twilioClient.conversations.v1.conversations(conversationSid)
+      .webhooks
+      .create({
+        target: 'studio',
+        'configuration.flowSid': 'FWfXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', // This is the SID of your Studio Flow
+        'configuration.filters': ['onMessageAdded']
+      });
+
+    response.setStatusCode(200);
+    return callback(null, response);
+  } catch (error) {
+    console.error(error);
+    response.setStatusCode(500);
+    response.setBody(error.message);
+    return callback(null, response);
+  }
+};
+```
+
+5. Save the function.
+6. **Copy URL** from the "kebab" three dot menu next to it and and use it as `REACT_APP_CREATE_CONVERSATION_SCOPED_WEBHOOK_URL` .env variable below.
+7. Click **Deploy All**.
 
 ## Setting up Push Notifications
 
